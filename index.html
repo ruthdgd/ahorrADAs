@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Arvo&family=Josefin+Sans&family=Kanit:wght@100;500&family=Lobster+Two:wght@700&family=Lumanosimo&family=Mukta:wght@500&family=Nunito:wght@300&family=Tilt+Neon&family=Ysabeau+Infant:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css" />
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css" />
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css" />
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css" />
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <!-- link generador de id CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <link rel="icon" href="assets/logo-ahorradas-removebg-preview.png" type="image/x-icon" />
+    <script src="tailwind.config.js"></script>
+    <title>AhorrADAs</title>
+</head>
+
+<body class="bg-gradient-to-r from-[#c457c9] to-[#96e0a0] min-h-screen flex flex-col justify-between dark:bg-gradient-to-r
+    dark:from-[#504475] dark:to-[#705f82]">
+    <header class=" ahorradas-title relative">
+        <nav class=" flex w-full lg:items-center bg-[#b240b8]  dark:bg-[#5f4187]   justify-between lg:px-9
+            shadow-2xl">
+            <div class="flex flex-shrink-0 items-center">
+                <img class="w-20 dark:saturate-50" src="./assets/logo-ahorradas-removebg-preview.png" alt="">
+                <h1
+                    class="bg-[#b240b8] dark:bg-[#5f4187]  font-['Agbalumo'] text-white text-2xl lg:font-medium lg:text-3xl">
+                    AhorrADAs</h1>
+
+            </div>
+            <div class="flex  flex-row justify-between w-[70px] p-[10px] gap-[10px] ">
+                <button id="btn-claro-oscuro" class="lg:hidden"><i class="fa-solid fa-moon text-blue-600 text-lg"></i>
+                </button>
+                <button id="hamburger" class="text-white focus:outline-none lg:hidden ">
+                    <i class="fi fi-br-menu-burger"></i>
+                </button>
+
+            </div>
+
+            <ul class=" flex hidden flex-col lg:static lg:justify-end z-10 shadow-xl bg-violet-200 items-center  
+                absolute bg-purple w-[100%]  top-full justify-evenly  lg:w-[0] 
+               
+                 lg:flex lg:flex-row dark:bg-[#504475]" id="mobile-menu">
+                <button id="boton-menu-cerrar"
+                    class="lg:hidden dark:text-white w-[320px] flex justify-end text-lime-600 text-[1rem] p-[5px]"><i
+                        class="fi fi-br-cross"></i></button>
+                <button id="btn-claro-oscuro2" class="hidden lg:block lg:mr-6"><i
+                        class="fa-solid fa-moon text-blue-600 text-lg"></i>
+                </button>
+                <li>
+                    <a href="#Balance" class="focus:ring-2 text-lime-600 flex lg:bg-[#b240b8] dark:lg:bg-[#5f4187] dark:text-white  lg:hover:bg-[#96e0a0]
+                        dark:lg:hover:bg-[#7c6a94] 
+                          lg:text-white lg:w-[114px] gap-2
+                    lg:rounded-md px-3 py-2 font-bold lg:text-sm lg:font-medium">
+                        <i class="fi fi-rr-chart-histogram "></i>
+                        Balances
+                    </a>
+                </li>
+                <li>
+                    <a href="#categorias" class="text-lime-600 flex lg:bg-[#b240b8] lg:hover:bg-[#96e0a0] dark:lg:hover:bg-[#7c6a94] dark:text-white  dark:lg:bg-[#5f4187]   lg:text-white lg:w-[114px] gap-2
+                            lg:rounded-md px-3 py-2 font-bold lg:text-sm lg:font-medium">
+                        <i class=" fi fi-sr-tags"></i>
+                        Categorias
+                    </a>
+                </li>
+                <li>
+                    <a href="#reportes" class="text-lime-600 flex lg:bg-[#b240b8] lg:hover:bg-[#96e0a0] dark:lg:hover:bg-[#7c6a94] dark:text-white dark:lg:bg-[#5f4187] lg:text-white lg:w-[114px] gap-2
+                            lg:rounded-md px-3 py-2 font-bold lg:text-sm lg:font-medium lg:">
+                        <i class=" fi fi-sr-chart-pie"></i>
+                        Reportes
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <section id="Balance" class="aBalance ">
+            <div class="flex flex-col lg:flex-row items-center gap-3  mt-5 lg:justify-center m-auto lg:items-start 
+            lg:mt-10">
+                <div class="flex flex-col  gap-3">
+                    <div class=" rounded-lg  flex w-80   flex-col p-4 drop-shadow-lg bg-[#eae6f7] dark:bg-[#3c2f66]
+                   lg:w-96">
+                        <h2 class="text-3xl text-center font-bold p-4 dark:text-white ">Balance</h2>
+                        <div id="balance-ganancia" class="ganancias w-72 lg:w-80 p-2  flex justify-between ">
+                            <p class="text-xl dark:text-[#688773]">Ganancias</p>
+                            <p class="text-xl text-[green] dark:text-[#558a69]">+$0</p>
+                        </div>
+                        <div id="balance-gastos" class="gastos w-72 lg:w-80 p-2  flex  justify-between">
+                            <p class="text-xl dark:text-white">Gastos</p>
+                            <p class="text-xl text-[red] dark:text-[#8a5160]">-$0</p>
+                        </div>
+                        <div id="balance-total" class="total flex w-72 lg:w-80 p-2  justify-between">
+                            <p class="text-xl dark:text-white">Total</p>
+                            <p class="text-xl font-bold dark:text-white">$0</p>
+                        </div>
+                    </div>
+
+                    <div class=" flex justify-between w-80 lg:w-[100%] lg:gap-5 flex-col p-4 drop-shadow-lg bg-[#eae6f7] dark:bg-[#3c2f66]  rounded-lg
+                ">
+                        <div class="flex flex-row justify-between items-center gap-2 lg:gap-3">
+                            <h2 class="text-3xl text-center font-bold dark:text-white">Filtros</h2>
+                            <button id="ocultarFiltros" class="text-[#c402f5] dark:text-[#72608a] dark:hover:text-white font-medium hover:text-[#7830db]
+                            hover:text-shadow-lg">Ocultar
+                                filtros</button>
+                        </div>
+                        <div id="filtrosContenedor" class="block">
+                            <div class="flex flex-col gap-2 lg:gap-3">
+                                <label for="filtro-tipo" class="text-xl dark:text-white">Tipo</label>
+                                <select name="" id="filtro-tipo"
+                                    class="h-10 rounded-lg p-2 dark:text-white dark:bg-[#7d6899]">
+                                    <option value="todo">Todos</option>
+                                    <option value="ganancias">Ganancias</option>
+                                    <option value="gastos">Gastos</option>
+                                </select>
+                            </div>
+                            <div class="flex flex-col gap-2 lg:gap-3">
+                                <label for="selecBalance" class=" categorias text-xl dark:text-white">Categoria</label>
+                                <select name="" id="selecBalance"
+                                    class="h-10 rounded-lg p-2 dark:text-white dark:bg-[#7d6899]">
+                                    <option value="Todas ">Todas</option>
+
+                                </select>
+                            </div>
+                            <div class="flex flex-col gap-2 lg:gap-3">
+                                <label for="filtro-fecha" class="text-xl dark:text-white">Desde</label>
+                                <input type="date" id="filtro-fecha"
+                                    class="h-10 rounded-lg p-2 dark:text-white dark:bg-[#7d6899]">
+                            </div>
+                            <div class="flex flex-col gap-2 lg:gap-3">
+                                <label for="filtro-ordenar" class="text-xl dark:text-white">Ordenar por</label>
+                                <select name="" id="filtro-ordenar"
+                                    class="h-10 rounded-lg p-2 dark:text-white dark:bg-[#7d6899]">
+                                    <option value="masRecientes">Mas recientes</option>
+                                    <option value="MenosRecientes">Menos recientes</option>
+                                    <option value="MayorMonto">Mayor monto</option>
+                                    <option value="ManorMonto">Menor monto</option>
+                                    <option value="A/Z">A/Z</option>
+                                    <option value="Z/A">Z/A</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between  flex-col p-4 w-80 drop-shadow-lg bg-[#eae6f7] gap-5 
+                rounded-lg lg:w-2/4 dark:bg-[#3c2f66] ">
+                    <h2 class="text-3xl text-center font-bold p-4 dark:text-white">Operaciones</h2>
+                    <button id="abrirNuevaOperacion" class="w-52 h-10 my-4 bg-green text-white bg-[#b240b8] hover:bg-[#96e0a0] hover:text-[#050505]
+                    rounded-lg m-auto dark:lg:hover:bg-[#7c6a94] dark:bg-[#5f4187] dark:text-white">+
+                        Nueva operación</button>
+                    <div class="imagen-operaciones">
+                        <div class="object-contain lg:w-80 lg:m-auto">
+                            <img src="assets/operaciones-girl.jpeg" alt="" />
+                        </div>
+                        <h3 class="text-xl font-bold text-center dark:text-white">Sin resultados</h3>
+                        <p class="text-center dark:text-white">Cambia los filtros o agrega operaciones</p>
+                    </div>
+                    <!---------------------------tablas de operaciones  ---------------------------------------------------------->
+                    <table id="tabla-data-operaciones" class="hidden">
+                        <thead class=" text-[#b240b8]">
+                            <tr>
+                                <th id="descripcion" class="text-sm lg:text-lg dark:text-white">Descripcion</th>
+                                <th id="categoria" class="text-sm lg:text-lg dark:text-white">Categoria</th>
+                                <th id="fecha" class="text-sm hidden lg:block lg:text-lg dark:text-white">Fecha</th>
+                                <th id="monto" class="text-sm lg:text-lg dark:text-white">Monto</th>
+                                <th class="text-sm lg:text-lg dark:text-white">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabody-operaciones">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class=" flex justify-center text-[#64c27b] gap-2 ">
+                                    <a href=""><i class=" fi fi-sr-edit-alt"></i></a>
+                                    <a href=""><i class="fi fi-sr-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!---------------------sección reportes----------------------->
+        <section id="reportes" class=" aReportes hidden">
+            <div class="flex justify-between flex-col p-4 w-80 drop-shadow-lg bg-[#eae6f7] dark:bg-[#3c2f66]  gap-5 mt-[23px]
+                rounded-lg lg:w-3/5 m-auto lg:mt-10">
+                <h2 class="text-3xl text-center font-bold lg:text-4xl dark:text-white">Reportes</h2>
+                <div id="imagen-reportes" class="hidden">
+                    <div class="object-contain lg:w-80 lg:m-auto">
+                        <img src="assets/reportes-girl.jpeg" alt="chica mirando reporte de finanzas">
+                    </div>
+                    <div>
+                        <h2 class="font-normal text-2xl text-center lg:text-3xl dark:text-white">Operaciones
+                            insuficientes</h2>
+                        <p class="text-center text-sm lg:text-lg dark:text-white">Prueba agregando más operaciones</p>
+                    </div>
+                </div>
+                <!-- -------------------------tablas de reporte------------------------------------------- -->
+                <div id="tablas-reportes" class="hidden w-full">
+                    <table class="w-full">
+                        <thead class="text-[#b240b8]">
+                            <tr>
+                                <th class="font-bold   text-base dark:text-white">Resumen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-[#b240b8] font-bold dark:text-white">Categoria con mayor ganancia</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-[#b240b8] font-bold dark:text-white">Categoria con mayor gasto</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-[#b240b8] font-bold dark:text-white">Categoria con mayor balance</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-[#b240b8] font-bold dark:text-white">Mes con mayor ganancia</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-[#b240b8] font-bold dark:text-white">Mes con mayor gasto</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 class="text-[#b240b8] font-bold text-center text-2xl dark:text-white">Totales por categoria</h3>
+                    <table class="w-full">
+                        <thead class="text-[#b240b8]">
+                            <tr class="w-full dark:text-white">
+                                <th class="dark:text-white">Categoria</th>
+                                <th class="dark:text-white">Ganancias</th>
+                                <th class="dark:text-white">Gastos</th>
+                                <th class="dark:text-white">Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 class="text-[#b240b8] font-bold text-center text-2xl dark:text-white">Totales por mes
+                    </h3>
+                    <table class="w-full">
+                        <thead class="text-[#b240b8] w-full  dark:text-white">
+                            <tr class="w-full dark:text-white">
+                                <th>Mes</th>
+                                <th>Ganancias</th>
+                                <th>Gastos</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="EditarOperacion" class="hidden">
+            <form class="flex justify-between  flex-col p-4 w-80 drop-shadow-lg bg-[#eae6f7] gap-2 mt-[23px]
+                rounded-lg lg:w-3/5 m-auto lg:mt-10 dark:bg-[#3c2f66]">
+                <h2 class="text-3xl text-center font-bold lg:text-4xl dark:text-white">Editar Operación</h2>
+                <div class="flex flex-col gap-2 lg:gap-3">
+                    <label for="descripcionForm-editar" class="text-xl dark:text-white">Descripción</label>
+                    <input type="text" id="descripcionForm-editar" class="h-10 rounded-lg p-2 dark:bg-[#7d6899]">
+                    <div id="error-editarDescripcion" class="text-red-500 hidden">
+                        <p>Por favor completa la descripción</p>
+                    </div>
+                    <label for="montoForm-editar" class="text-xl dark:text-white">Monto</label>
+                    <input type="number" id="montoForm-editar" class="h-10 rounded-lg p-2 dark:bg-[#7d6899]">
+                    <div id="error-editarNuevoMonto" class="text-red-500 hidden">
+                        <p>Por favor ingresa un monto válido</p>
+                    </div>
+                    <label for="editar-gastos-ganacias" class="text-xl dark:text-white">Tipo</label>
+                    <select name="" id="editar-gastos-ganacias" class="h-10 rounded-lg p-2 dark:bg-[#7d6899]">
+                        <option value="">Gastos</option>
+                        <option value="">Ganancias</option>
+                    </select>
+                    <div id="error-editarTipo" class="text-red-500 hidden">
+                        <p>Por favor seleccioná un tipo de monto</p>
+                    </div>
+                    <label for="selecEditarOperacion" class="text-xl dark:text-white">Categoría</label>
+                    <select name="categoria" id="selecEditarOperacion" class="  h-10 rounded-lg p-2 dark:bg-[#7d6899]">
+                        <option value=""></option>
+
+                    </select>
+                    <label for="fecha-editar-operacion" class="text-xl dark:text-white">Fecha</label>
+                    <input type="date" id="fecha-editar-operacion" class="h-10 rounded-lg p-2 dark:bg-[#7d6899]">
+                    <div id="error-editarFecha" class="text-red-500 hidden">
+                        <p>Por favor ingresá una fecha válida</p>
+                    </div>
+                </div>
+                <div class=" flex self-end gap-3">
+                    <button id="cancelar_editar_operacion" class="w-20 my-4 h-10 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none
+                    focus:bg-red-700 dark:bg-rose-900 dark:hover:bg-rose-800
+                    rounded-lg m-auto lg:w-28">Cancelar</button>
+                    <button type="submit" id="editarOperacionBtn" class=" editarBtnOperacion
+                  w-20 my-4 h-10 text-white rounded-lg text-white bg-purple-700 hover:bg-purple-600 hover:bg-[#c7adff]
+                  rounded-lg m-auto lg:w-28">Editar</button>
+                </div>
+            </form>
+        </section>
+        <!------------------------sección categorias---------------------------------->
+        <section id="categorias" class=" categoria hidden aCategorias">
+
+        </section>
+        <!--------------------------------Nueva Operación-------------------------------->
+        <section id="nuevaOperacion" class="hidden">
+            <form id="nuevaOperacionForm" type="submit" class="flex justify-between  flex-col p-4 w-80 drop-shadow-lg bg-[#eae6f7] gap-2 mt-[23px]
+                rounded-lg lg:w-3/5 m-auto lg:mt-10 dark:bg-[#3c2f66]">
+                <h2 class="text-3xl text-center font-bold lg:text-4xl dark:text-white">Nueva operación</h2>
+                <div class="flex flex-col gap-2 lg:gap-3">
+                    <label for="descripcionForm" class="text-xl dark:text-white">Descripción</label>
+                    <input type="text" id="descripcionForm" class="h-10 rounded-lg p-2 dark:bg-[#7d6899]">
+                    <div id="error-descripcion" class="text-red-500 hidden">
+                        <p>Por favor completa este campo</p>
+                    </div>
+                    <label for="montoForm" class="text-xl dark:text-white">Monto</label>
+                    <input type="number" id="montoForm" class="h-10 rounded-lg p-2 dark:bg-[#7d6899]">
+                    <div id="error-monto" class="text-red-500 hidden">
+                        <p>Por favor ingresa un monto válido</p>
+                    </div>
+                    <label for="tipo-gasto-ganancia" class="text-xl dark:text-white">Tipo</label>
+                    <select name="" id="tipo-gasto-ganancia" class="h-10 rounded-lg p-2 dark:bg-[#7d6899]" required>
+                        <option value="Gastos">Gastos</option>
+                        <option value="Ganancia">Ganancias</option>
+
+                    </select>
+                    <label for="selecCat" class="text-xl dark:text-white">Categoría</label>
+                    <select name="categoria" id="selecCat" class="  h-10 rounded-lg p-2 dark:bg-[#7d6899]" required>
+                        <option value=""></option>
+
+                    </select>
+                    <label for="fechaForm" class="text-xl dark:text-white">Fecha</label>
+                    <input type="date" id="fechaForm" class="h-10 rounded-lg p-2 dark:bg-[#7d6899]">
+                    <div id="error-fecha" class="text-red-500 hidden">
+                        <p>Por favor ingresá una fecha válida</p>
+                    </div>
+                </div>
+                <div class=" flex self-end gap-3">
+                    <button type="reset" id="cerrar" class=" w-20 my-4 h-10 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none
+                    focus:bg-red-700 dark:bg-rose-900 dark:hover:bg-rose-800
+                    rounded-lg m-auto lg:w-28">Cancelar</button>
+                    <button class="nueva-operacion-agregar-btn
+                    w-20 my-4 h-10 text-white rounded-lg text-white bg-purple-700 hover:bg-purple-600 hover:bg-[#c7adff]
+                    rounded-lg m-auto lg:w-28">Agregar</button>
+                </div>
+            </form>
+        </section>
+
+
+        <div id="modal" class="flex items-center justify-center modal fixed z-10 inset-0 overflow-y-auto hidden ">
+            <div class="modal-content  flex justify-between  flex-col p-4 w-80 drop-shadow-lg  bg-[#b240b8]
+               rounded-lg lg:w-3/5 dark:bg-[#3c2f66]">
+                <span class="close text-4xl fo top-0 right-0 mt-4 mr-4 cursor-pointer text-white ">&times;</span>
+
+                <p class="text-xl mb-4 text-white ">Ingrese el nuevo nombre para la categoría:</p>
+                <input type="text" id="nuevoNombreInput"
+                    class="w-full h-10 rounded-lg border border-gray-300 focus:outline-none focus:border-purple-500 px-4">
+                <button id="guardarNuevoNombre" class="w-full mt-4 h-10 bg-purple-600 text-white rounded-lg hover:bg-purple-700 focus:outline-none
+                    focus:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600">Guardar</button>
+
+            </div>
+        </div>
+
+        <div id="modal-eliminar"
+            class="flex items-center justify-center modal fixed z-10 inset-0 overflow-y-auto hidden">
+            <div class="modal-content flex justify-between flex-col p-4 w-80 drop-shadow-lg bg-[#b240b8] rounded-lg
+                lg:w-3/5 dark:bg-[#3c2f66]">
+                <span class="modal-close text-4xl fo top-0 right-0 mt-4 mr-4 cursor-pointer text-white">&times;</span>
+                <p class="text-xl mb-4 text-white text-center">Está por eliminar la categoría:</p>
+                <h2 id="eliminarCategoria" class="text-white text-2xl text-center"></h2> <!-- Cambiado a h2 -->
+                <button id="eliminarCategoriaBtn" class="w-full mt-4 h-10 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none
+                    focus:bg-red-700 dark:bg-rose-900 dark:hover:bg-rose-800">Eliminar</button>
+                <!-- Cambiado id y color del botón -->
+                <button
+                    class="modal-btn-close w-full mt-2 h-10  text-white rounded-lg text-white bg-purple-700 hover:bg-purple-600 hover:bg-[#c7adff]  ">Cerrar</button>
+                <!-- Agregado botón de cerrar -->
+            </div>
+        </div>
+        <div id="modal-eliminar-operacion-tabla"
+            class="flex items-center justify-center modal fixed z-10 inset-0 overflow-y-auto hidden">
+            <div class="modal-content flex justify-between flex-col p-4 w-80 drop-shadow-lg bg-[#b240b8] rounded-lg
+                lg:w-3/5 dark:bg-[#3c2f66]">
+                <span class=" modal-close-X  text-4xl top-0 right-0 mt-4 mr-4 cursor-pointer text-white">&times;</span>
+                <p class="text-xl mb-4 text-white text-center">Seguro quiere eliminar
+                    la operación</p>
+                <h2 id="eliminarOperacion" class="text-white text-2xl text-center"></h2>
+                <button id="delete-btn-modal" class="w-fullw mt-4 h-10 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none
+                    focus:bg-red-700 dark:bg-rose-900 dark:hover:bg-rose-800">Eliminar</button>
+                <button
+                    class="modal-close-operacion w-full mt-2 h-10  text-white rounded-lg text-white bg-purple-700 hover:bg-purple-600 hover:bg-[#c7adff] ">Cerrar</button>
+            </div>
+        </div>
+    </main>
+    <footer class=" bg-[#b240b8]  dark:bg-[#5f4187]    shadow-2xl mt-[35px]">
+        <h3 class="flex  items-center justify-center
+         font-bold text-sm lg:font-medium text-white mt-2">De Argentina con ❤ para el mundo</h3>
+        <div class="flex justify-evenly mt-2">
+            <div class="flex gap-2 items-center">
+                <h3 class="flex  
+         font-bold text-sm lg:font-medium text-white">Ruth Delgado</h3>
+                <div class="flex justify-around gap-2 ">
+                    <a href="https://www.linkedin.com/in/ruth-dgd" target="_blank">
+                        <i class="fa-brands fa-linkedin text-white text-lg hover:text-purple-600"></i>
+                    </a>
+                    <a href="https://github.com/ruthdgd" target="_blank">
+                        <i class="fa-brands fa-github text-white text-lg hover:text-purple-600"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="flex gap-2 items-center">
+                <h3 class="flex 
+         font-bold text-sm lg:font-medium text-white">Melie Galaz</h3>
+                <div class="flex justify-around gap-2">
+                    <a href="https://www.linkedin.com/in/mely-galaz-9638bb246/" target="_blank">
+                        <i class="fa-brands fa-linkedin text-white text-lg hover:text-purple-600"></i>
+                    </a>
+                    <a href="https://github.com/MelieGalaz" target="_blank">
+                        <i class="fa-brands fa-github text-white text-lg hover:text-purple-600"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
