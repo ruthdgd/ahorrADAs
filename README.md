@@ -124,6 +124,6 @@ Las tecnologías que utilize para construir este proyecto:
 
 ## Link para usar la app
 
-https://meliegalaz.github.io/trabajoAhorradas/
+https://ruthdgd.github.io/ahorrADAs/
 # ahorrADAs
 # ahorrADAs
